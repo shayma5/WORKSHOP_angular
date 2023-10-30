@@ -1,0 +1,16 @@
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">id facture: {{idFacture}} </li>
+    <li class="list-group-item">active:{{active}}</li>
+
+    <ng-container *ngIf="invoiceItem">
+        <li class="list-group-item"  >montant facture: {{invoiceItem.montantFacture}} </li>
+        <li class="list-group-item">montant remise:{{invoiceItem.montantRemise}}</li>
+        <li class="list-group-item">date facture:{{invoiceItem.dateFacture}}</li>
+    </ng-container>
+   
+
+    <p *ngIf="!active"> Impossible de visualiser les détails de la facture</p>
+
+
+
+  </ul>

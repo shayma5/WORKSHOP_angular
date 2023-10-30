@@ -1,0 +1,4 @@
+
+<ul class="list-group list-group-flush" *ngFor="let item of list">
+    <li class="list-group-item"> Facture: {{item.idFacture}} <button type="button" class="btn btn-link" [routerLink]="['/invoice',item.idFacture,item.active]"> Details </button> </li>
+</ul>

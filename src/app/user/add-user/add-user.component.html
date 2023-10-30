@@ -1,0 +1,56 @@
+<h2>Add New User</h2>
+    <!--<button (click)="add()">Add</button>-->
+<form #addForm="ngForm" (ngSubmit)="add(addForm)">
+    <div class="form-group">
+      <label >First Name</label>
+      <input type="text" class="form-control" id="inputname"  placeholder="Enter firstname" name="inputname" ngModel required minlength="3" #inputname="ngModel" pattern="[a-zA-Z]*">
+      <small class="text text-danger" *ngIf="inputname?.errors?.['required'] && inputname.touched">Name is required</small>
+      <small class="text text-danger" *ngIf="inputname?.errors?.['minlength'] && inputname.touched">min length est 3</small>
+      <small class="text text-danger" *ngIf="inputname?.errors?.['pattern'] && inputname.touched">name should be letters only</small>
+    </div>
+
+    <div class="form-group">
+      <label >Last Name</label>
+      <input type="text" class="form-control" id="inputlastname"  placeholder="Enter lastname" name="inputlastname" ngModel required minlength="3" #inputlastname="ngModel" pattern="[a-zA-Z]*">
+      <small class="text text-danger" *ngIf="inputlastname?.errors?.['required'] && inputlastname.touched">lastname is required</small>
+      <small class="text text-danger" *ngIf="inputlastname?.errors?.['minlength'] && inputlastname.touched">min length est 3</small>
+      <small class="text text-danger" *ngIf="inputlastname?.errors?.['pattern'] && inputlastname.touched">lastname should be letters only</small>
+    </div>
+
+    <div class="form-group">
+      <label >Birth Day</label>
+      <input type="date" class="form-control" id="inputdate"  placeholder="Enter birth date" name="inputdate" ngModel required #inputdate="ngModel">
+      <small class="text text-danger" *ngIf="inputdate?.errors?.['required'] && inputdate.touched">birth date is required</small>
+    </div>
+
+    <div class="form-group">
+      <label >Email</label>
+      <input type="email" class="form-control" id="inputmail"  placeholder="Enter your email" name="inputmail" ngModel required minlength="3" #inputmail="ngModel" pattern="^[a-zA-Z0-9._-]+@gmail.com">
+      <small class="text text-danger" *ngIf="inputmail?.errors?.['required'] && inputmail.touched">lastname is required</small>
+      <small class="text text-danger" *ngIf="inputmail?.errors?.['pattern'] && inputmail.touched">emaiiiiiiiiyil ya marweeeen</small>
+    </div>
+
+    <div class="form-group">
+      <label >password</label>
+      <input type="password" class="form-control" id="inputpass"  placeholder="Enter your password" name="inputpass" ngModel required minlength="8" #inputpass="ngModel"  pattern="^[a-zA-Z0-9]{8,}?">
+      <small class="text text-danger" *ngIf="inputpass?.errors?.['required'] && inputpass.touched">lastname is required</small>
+      <small class="text text-danger" *ngIf="inputpass?.errors?.['minlength'] && inputpass.touched">min length est 8</small>
+      <small class="text text-danger" *ngIf="inputpass?.errors?.['pattern'] && inputpass.touched">you have to accept the pattern</small>
+    </div>
+
+    <div class="form-group">
+      <label >Profession</label>
+      <input type="text" class="form-control" id="inputprofession"  placeholder="Enter lastname" name="inputprofession" ngModel required minlength="3" #inputprofession="ngModel">
+      <small class="text text-danger" *ngIf="inputprofession?.errors?.['required'] && inputprofession.touched">lastname is required</small>
+      <small class="text text-danger" *ngIf="inputprofession?.errors?.['minlength'] && inputprofession.touched">min length est 3</small>
+    </div>
+
+    <div class="form-group">
+      <label >Customer Category</label>
+      <input type="text" class="form-control" id="inputcat" readonly placeholder="Customer" name="inputcat" ngModel #inputcat="ngModel">
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Save</button>
+  </form>
+
+  
